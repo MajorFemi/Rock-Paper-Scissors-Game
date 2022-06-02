@@ -32,14 +32,33 @@ def get_winner(Player_move, CPU):
     else:
         print('CPU is the winner.')
 
+def play_again(): #Extra - this allows player to choose, if player wants to continue or nay.
+    while True:
+        play = (input("Do you like to play again! Y - (Yes), N - (No): ").upper())
+        if play not in ("Y", "N"):
+            print("Enter Y or N")
+            continue
+        else:
+            break
+    return play
 
 while True:
     Player_move = get_player_move()
     CPU = get_computer_move()
     print(f'{Player} {Player_move} :  CPU {CPU}')
     if draw(Player_move, CPU):
-        print(f"It is a tie! Let's play again, {Player}")
+        print(f"It is a tie! Let's play again, {Player}.") #No winner, so a restart is needed, to determine the winner.
         continue
     else:
         get_winner(Player_move, CPU)
-        break
+        player_decision = play_again() #Player makes a decision either to play or not. 
+        if (player_decision == "Y"):
+            print(f"Excellent, {Player}, I like that! \n Let's play!")
+            continue
+        else:
+            print(f"Okay! {Player}, See you Later!")
+            break 
+
+
+
+    
