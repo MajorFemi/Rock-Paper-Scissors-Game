@@ -32,15 +32,15 @@ def get_winner(Player_move, CPU):
     else:
         print('CPU is the winner.')
 
-def play_again(): #Extra - this allows player to choose, if player wants to continue or nay.
-    while True:
-        play = (input("Do you like to play again! Y - (Yes), N - (No): ").upper())
-        if play not in ("Y", "N"):
-            print("Enter Y or N")
-            continue
-        else:
-            break
-    return play
+#def play_again(): #Extra - this allows player to choose, if player wants to continue or nay.
+    #while True:
+      #  play = (input("Do you like to play again! Y - (Yes), N - (No): ").upper())
+        #if play not in ("Y", "N"):
+         #   print("Enter Y or N")
+          #  continue
+       # else:
+       #     break
+    #return play
 
 while True:
     Player_move = get_player_move()
@@ -51,13 +51,16 @@ while True:
         continue
     else:
         get_winner(Player_move, CPU)
-        player_decision = play_again() #Player makes a decision either to play or not. 
-        if (player_decision == "Y"):
-            print(f"Excellent, {Player}, I like that! \n Let's play!")
-            continue
-        else:
-            print(f"Okay! {Player}, See you Later!")
-            break 
+        break
+
+
+ #player_decision = play_again() #Player makes a decision either to play or not. 
+#if (player_decision == "Y"):
+ #    print(f"Excellent, {Player}, I like that! \n Let's play!")
+ #    continue
+# else:
+#  print(f"Okay! {Player}, See you Later!")
+# break 
 
 
 
